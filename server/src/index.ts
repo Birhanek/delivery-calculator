@@ -15,7 +15,9 @@ app.use(cors({
 }))
 
 app.use('/',router)
-
+app.get('/',(req,res)=>{
+res.send('<h1 style="color:blue;font-size:20px;text-align:center">Welcome to delivery calculator</h1>')
+})
 app.use((err:Error,req:Request,res:Response,next:NextFunction)=>{
     return res.status(500).json({
         message:err.message,
