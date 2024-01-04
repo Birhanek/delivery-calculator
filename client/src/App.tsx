@@ -1,13 +1,14 @@
 import React, { FormEvent, useState } from "react";
 import "./App.css";
 import { getDeliveryFee } from "./services/services";
+import moment from "moment";
 
 function App() {
   const background = "images/fee-calculator-1.jpg";
   const [cartValue, setCartValue] = useState<number>(0);
   const [delivery_distance, setDeliveryDistance] = useState<number>(0);
   const [number_of_items, setItems] = useState<number>(0);
-  const [time, setWhen] = useState<string>("2023-07-26 07:28");
+  const [time, setWhen] = useState<string>(moment().format('YYYY-MM-DD hh:mm'));
   const [isResult, setIsResult] = useState<boolean>(false);
   const [deliveryFee, setDeliveryFee] = useState<number>(0);
 
@@ -44,7 +45,7 @@ function App() {
     setCartValue(0);
     setDeliveryDistance(0);
     setItems(0);
-    setWhen("2023-07-26 07:28");
+    setWhen(moment().format('YYYY-MM-DD hh:mm'));
     setIsResult(false);
   };
   return (
